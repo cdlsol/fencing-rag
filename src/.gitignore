@@ -1,3 +1,4 @@
 /myenv
-/pdf_extractor/__pycache__
-/pdf_extractor/*.txt
+/utils/__pycache__
+/utils/*.txt
+/utils/.env
