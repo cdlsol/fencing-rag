@@ -1,0 +1,7 @@
+myenv/
+src/utils/__pycache__
+src/utils/*.txt
+src/utils/.env
+src/chunked_embeddings.csv
+src/duckdb/*.duckdb
+src/duckdb/*.duckdb.wal
