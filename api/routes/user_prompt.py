@@ -11,7 +11,12 @@ router = APIRouter()
 
 @router.post("/ask")
 def ask_question(prompt: Prompt):
+    log.info(f"Received question: {prompt.question}")
     try:
-        return handle_rag_query(prompt.question)
+        result = handle_rag_query(prompt.question)
+        log.info(f"Generated answer: {result['answer'][:100]}...")
+        log.info(f"Context: {result['context'][:100]}...")
+        return result
     except Exception as e:
+        log.exception("Error occurred while handling RAG query.")
         raise HTTPException(status_code=500, detail=str(e))
